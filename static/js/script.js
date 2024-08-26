@@ -20,6 +20,8 @@ $(document).ready(function() {
         toggleCheckboxVisibility();
     });
 
+
+    
     // Toggle password visibility and label text on checkbox click
     $('#flexCheckIndeterminate').on('click', function() {
         var type = passwordField.attr('type') === 'password' ? 'text' : 'password';

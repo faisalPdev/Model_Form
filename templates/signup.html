@@ -29,10 +29,19 @@
                         <div>{{ form.password2 }}</div>
                     </div>
                     {{ form.non_field_errors }}
-                    <button type="submit" class="btn btn-success mt-4 w-100 rounded">
-                        
-                        
-                        Sign Up</button>
+
+                    {% if form.errors %}
+                    <div class="form-errors d-flex justify-content-center mt-3 ">
+                        {% comment %} {% for error in form.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                          </div>
+                        {% endfor %} {% endcomment %}
+                         {{form.errors}}
+                    </div>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-success mt-4 w-100 rounded">Sign Up</button>
                     <div class="d-flex justify-content-center mt-2">
                         <p class="">Already have an account?<span><a href="{% url 'signin' %}" class="text-decoration-none ms-1">Login</a></span></p>
                     </div>
